@@ -1,0 +1,27 @@
+# Virtual environment
+
+.venv/
+
+# Python cache
+
+**pycache**/
+*.py[cod]
+
+# Jupyter checkpoints
+
+.ipynb_checkpoints/
+
+# Local data files
+
+data/*
+!data/README.md
+!data/.gitkeep
+
+# Environment variables
+
+.env
+
+# OS files
+
+.DS_Store
+Thumbs.db
