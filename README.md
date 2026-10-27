@@ -44,3 +44,22 @@ Monte Carlo option prices were compared against analytical Black-Scholes prices 
 
 Both simulated prices were within three Monte Carlo standard errors of their analytical benchmarks. The results demonstrate numerical agreement for the tested parameter configuration.
 
+
+## Option Greeks Visualisation
+
+The following charts illustrate how Delta and Gamma change with the underlying asset price under the Black-Scholes model, keeping strike price, maturity, risk-free rate, and volatility fixed.
+
+### European Call Option
+
+![Call Option Delta and Gamma](reports/figures/call_delta_gamma.png)
+
+### European Put Option
+
+![Put Option Delta and Gamma](reports/figures/put_delta_gamma.png)
+
+### Interpretation
+
+- **Call Delta:** Generally increases as the underlying asset price rises.
+- **Put Delta:** Generally increases toward zero as the underlying asset price rises.
+- **Gamma:** Measures the sensitivity of Delta to changes in the underlying asset price. For standard European options under Black-Scholes assumptions, Gamma is the same for calls and puts with identical inputs and is typically highest near the strike price.
+
