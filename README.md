@@ -29,3 +29,18 @@ Portfolio value: **,000**
 
 VaR estimates a loss threshold at a specified confidence level. Expected Shortfall estimates the average loss in the tail beyond that threshold. These results are historical estimates and are not forecasts or investment advice.
 
+
+## Pricing Model Validation
+
+Monte Carlo option prices were compared against analytical Black-Scholes prices using 200,000 simulations. The simulation used a fixed random seed of 42 for reproducibility.
+
+| Metric | European Call | European Put |
+|---|---:|---:|
+| Black-Scholes Price | .0400 | .1393 |
+| Monte Carlo Price | .1018 | .2197 |
+| Monte Carlo Standard Error | .1363 | .0965 |
+| Absolute Price Difference | .0618 | .0804 |
+| Validation | PASS | PASS |
+
+Both simulated prices were within three Monte Carlo standard errors of their analytical benchmarks. The results demonstrate numerical agreement for the tested parameter configuration.
+
