@@ -63,3 +63,31 @@ The following charts illustrate how Delta and Gamma change with the underlying a
 - **Put Delta:** Generally increases toward zero as the underlying asset price rises.
 - **Gamma:** Measures the sensitivity of Delta to changes in the underlying asset price. For standard European options under Black-Scholes assumptions, Gamma is the same for calls and puts with identical inputs and is typically highest near the strike price.
 
+
+## Historical vs Monte Carlo Risk Analysis
+
+The project compares historical risk estimates with Monte Carlo estimates based on normally distributed returns, calibrated using the historical return series.
+
+### Risk Results
+
+Portfolio value: $100,000
+
+| Confidence Level | Risk Metric | Historical Model | Monte Carlo Model |
+|---|---|---:|---:|
+| 95% | Value at Risk (VaR) | $1,676.18 | $1,730.18 |
+| 95% | Expected Shortfall (ES) | $2,515.95 | $2,176.97 |
+| 99% | Value at Risk (VaR) | $2,972.83 | $2,467.54 |
+| 99% | Expected Shortfall (ES) | $3,958.76 | $2,837.74 |
+
+### Risk Model Comparison
+
+![Historical vs Monte Carlo Risk Comparison](reports/figures/risk_model_comparison.png)
+
+### Key Findings
+
+- At the 95% confidence level, Monte Carlo VaR is slightly higher than historical VaR.
+- At the 99% confidence level, historical VaR is higher than Monte Carlo VaR.
+- Historical Expected Shortfall exceeds Monte Carlo Expected Shortfall at both confidence levels, indicating that the empirical return distribution produces larger estimated average losses in the tail.
+- The differences illustrate how risk estimates depend on the assumptions underlying the model.
+
+**Methodology note:** Historical risk metrics use the empirical distribution of historical log returns. Monte Carlo risk metrics use simulated returns from a normal distribution calibrated to the same return series.
